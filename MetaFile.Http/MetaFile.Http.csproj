@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
+	<LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\MetaFile.snk</AssemblyOriginatorKeyFile>
+	<AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
+    <Version>1.0.1</Version>
+	<Company></Company>
+    <Authors>Leonid Salavatov</Authors>
+    <Copyright>Leonid Salavatov 2022</Copyright>
+    <PackageId>MetaFile.Http</PackageId>
+    <Product>MetaFile.Http</Product>
+    <Title>MetaFile.Http</Title>
+  	<Description>MetaFile http extensions package</Description>
+  	<PackageTags>metafile meta-file http extensions</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  	<PackageProjectUrl>https://github.com/mustaddon/MetaFile</PackageProjectUrl>
+  	<RepositoryUrl>https://github.com/mustaddon/MetaFile</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <NeutralLanguage />
+    <PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MetaFile\MetaFile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>
