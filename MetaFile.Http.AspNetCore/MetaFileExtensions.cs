@@ -43,9 +43,9 @@ public static class MetaFileExtensions
         {
             var metadataType = type.GetInterfaces().FirstOrDefault(x => x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IStreamFile<>))?.GenericTypeArguments.First();
 
-            if (metadataType != null)
+            if (metadataType != null && httpRequest.Headers.TryGetValue(MetaFileHeaders.Metadata, out var metadataHeaderValue))
             {
-                var metadata = JsonSerializer.Deserialize(Uri.UnescapeDataString(httpRequest.Headers[MetaFileHeaders.Metadata]), metadataType, jsonOptions);
+                var metadata = JsonSerializer.Deserialize(Uri.UnescapeDataString(metadataHeaderValue!), metadataType, jsonOptions);
                 var metadataProp = type.GetProperty(nameof(IStreamFile<int>.Metadata));
                 metadataProp!.SetValue(file, metadata);
             }
