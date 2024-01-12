@@ -11,7 +11,7 @@ public static class MetaFileExtensions
 {
     public static IResult ToResult(this IStreamFileReadOnly file, HttpResponse httpResponse, JsonSerializerOptions jsonOptions)
     {
-        var dispositionType = (file as IHttpFileReadOnly)?.InlineDisposition == true
+        var dispositionType = file is IHttpFileReadOnly { InlineDisposition: true }
             ? DispositionTypeNames.Inline
             : DispositionTypeNames.Attachment;
 
